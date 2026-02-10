@@ -1,0 +1,52 @@
+{
+  "created_utc": "2026-02-10T09:33:41.762813+00:00",
+  "torque_scale": 6.5,
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "scenarios": [
+    {
+      "slug": "single_limb_standing",
+      "title": "Single-Limb Upright Stability",
+      "description": "Single sphere-cylinder limb, standing reward, no kick-assist terms.",
+      "url": "http://127.0.0.1:8877/modular_assemblies.html?scene=modular_assemblies_1limb.xml&reward=standing&policy=assets%2Fpolicies%2Fsingle_limb_standing_stability_stage2_best.json&noise=0&stand_lift_gain=0&stand_kick_vz=0&stand_kick_vy=0&stand_inward=0&stand_torque=0&stand_lat=0&stall_lift=0&stall_fwd=0&stall_kick_vz=0&stall_kick_vx=0&max_boost=0&stall_detach_every=0&stand_detach_every=0&torque_scale=6.5",
+      "screenshot": "docs/media/single_limb_standing/single_limb_standing.png",
+      "video": "docs/media/single_limb_standing/single_limb_standing.webm",
+      "warmup_ms": 2800,
+      "record_ms": 5200,
+      "end_state": {
+        "simTime": 4.194999999999933,
+        "controlTick": 78
+      }
+    },
+    {
+      "slug": "eight_limb_standing",
+      "title": "Eight-Limb Standing",
+      "description": "8-limb assemblies with geometry-aware standing policy.",
+      "url": "http://127.0.0.1:8877/modular_assemblies.html?scene=modular_assemblies_8limb.xml&reward=standing&policy=assets%2Fpolicies%2Fstanding_8limb_geomv2_best.json&noise=0.02&torque_scale=6.5",
+      "screenshot": "docs/media/eight_limb_standing/eight_limb_standing.png",
+      "video": "docs/media/eight_limb_standing/eight_limb_standing.webm",
+      "warmup_ms": 3200,
+      "record_ms": 5600,
+      "end_state": {
+        "simTime": 4.689999999999922,
+        "controlTick": 87
+      }
+    },
+    {
+      "slug": "eight_limb_locomotion",
+      "title": "Eight-Limb Locomotion",
+      "description": "8-limb assemblies with geometry-aware locomotion policy.",
+      "url": "http://127.0.0.1:8877/modular_assemblies.html?scene=modular_assemblies_8limb.xml&reward=locomotion&policy=assets%2Fpolicies%2Flocomotion_8limb_geomv2_best.json&noise=0.02&torque_scale=6.5",
+      "screenshot": "docs/media/eight_limb_locomotion/eight_limb_locomotion.png",
+      "video": "docs/media/eight_limb_locomotion/eight_limb_locomotion.webm",
+      "warmup_ms": 3200,
+      "record_ms": 5600,
+      "end_state": {
+        "simTime": 4.689999999999922,
+        "controlTick": 87
+      }
+    }
+  ]
+}

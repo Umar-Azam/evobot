@@ -53,9 +53,41 @@ Open one of these URLs:
 2. Single-limb upright stability policy:
    - `http://127.0.0.1:8877/modular_assemblies.html?scene=modular_assemblies_1limb.xml&reward=standing&policy=assets/policies/single_limb_standing_stability_stage2_best.json&noise=0&torque_scale=6.5&stand_lift_gain=0&stand_kick_vz=0&stand_kick_vy=0&stand_inward=0&stand_torque=0&stand_lat=0&stall_lift=0&stall_fwd=0&stall_kick_vz=0&stall_kick_vx=0&max_boost=0&stall_detach_every=0&stand_detach_every=0`
 3. 8-limb standing (geometry-aware policy):
-   - `http://127.0.0.1:8877/modular_assemblies.html?scene=modular_assemblies_8limb.xml&reward=standing&policy=assets/policies/standing_8limb_geomv2_best.json&noise=0.02&torque_scale=1.0`
+   - `http://127.0.0.1:8877/modular_assemblies.html?scene=modular_assemblies_8limb.xml&reward=standing&policy=assets/policies/standing_8limb_geomv2_best.json&noise=0.02&torque_scale=6.5`
 4. 8-limb locomotion (geometry-aware policy):
-   - `http://127.0.0.1:8877/modular_assemblies.html?scene=modular_assemblies_8limb.xml&reward=locomotion&policy=assets/policies/locomotion_8limb_geomv2_best.json&noise=0.02&torque_scale=1.15`
+   - `http://127.0.0.1:8877/modular_assemblies.html?scene=modular_assemblies_8limb.xml&reward=locomotion&policy=assets/policies/locomotion_8limb_geomv2_best.json&noise=0.02&torque_scale=6.5`
+
+## Simulation Gallery (torque_scale=6.5)
+
+Media below was generated from this repository with:
+
+```bash
+conda run -n codex python tools/capture_readme_media.py --torque-scale 6.5 --out-dir docs/media
+```
+
+### Single-Limb Upright Stability
+
+![Single-limb standing](docs/media/single_limb_standing/single_limb_standing.png)
+
+<video src="docs/media/single_limb_standing/single_limb_standing.webm" controls muted loop playsinline width="960"></video>
+
+[Download video](docs/media/single_limb_standing/single_limb_standing.webm)
+
+### Eight-Limb Standing
+
+![Eight-limb standing](docs/media/eight_limb_standing/eight_limb_standing.png)
+
+<video src="docs/media/eight_limb_standing/eight_limb_standing.webm" controls muted loop playsinline width="960"></video>
+
+[Download video](docs/media/eight_limb_standing/eight_limb_standing.webm)
+
+### Eight-Limb Locomotion
+
+![Eight-limb locomotion](docs/media/eight_limb_locomotion/eight_limb_locomotion.png)
+
+<video src="docs/media/eight_limb_locomotion/eight_limb_locomotion.webm" controls muted loop playsinline width="960"></video>
+
+[Download video](docs/media/eight_limb_locomotion/eight_limb_locomotion.webm)
 
 ## Headless Validation Scenarios
 
@@ -100,7 +132,7 @@ conda run -n codex python tools/train_modular_policy_cem.py \
 
 ```bash
 conda run -n codex python tools/train_modular_policy_cem.py \
-  --url "http://127.0.0.1:8877/modular_assemblies.html?headless=1&scene=modular_assemblies_8limb.xml&reward=locomotion&policy=assets/policies/locomotion_8limb_best.json&noise=0.02&torque_scale=1.15" \
+  --url "http://127.0.0.1:8877/modular_assemblies.html?headless=1&scene=modular_assemblies_8limb.xml&reward=locomotion&policy=assets/policies/locomotion_8limb_geomv2_best.json&noise=0.02&torque_scale=1.15" \
   --generations 18 --population 24 --elite 6 \
   --rollout-steps 1400 --final-eval-steps 2400 --final-eval-repeats 5 \
   --init-sigma 0.025 --sigma-decay 0.98 --eval-random-torque-scale 0.02 \
