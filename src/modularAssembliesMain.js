@@ -1,6 +1,6 @@
 import * as THREE from "three";
-import { OrbitControls } from "../node_modules/three/examples/jsm/controls/OrbitControls.js";
-import load_mujoco from "../node_modules/mujoco-js/dist/mujoco_wasm.js";
+import { OrbitControls } from "../vendor/three/examples/jsm/controls/OrbitControls.js";
+import load_mujoco from "../vendor/mujoco-js/mujoco_wasm.js";
 import { loadSceneFromURL, getPosition, getQuaternion } from "./mujocoUtils.js";
 import { AssemblyGraphManager } from "./assemblies/AssemblyGraphManager.js";
 import { SimpleDGNPolicy } from "./assemblies/SimpleDGNPolicy.js";

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>evobot GitHub Pages</title>
+  </head>
+  <body style="font-family: sans-serif; padding: 24px;">
+    <p>Launching 8-limb standing scenario...</p>
+    <script>
+      const defaults = new URLSearchParams({
+        scene: "modular_assemblies_8limb.xml",
+        reward: "standing",
+        policy: "assets/policies/standing_8limb_geomv2_best.json",
+        noise: "0.02",
+        torque_scale: "6.5",
+      });
+      const incoming = new URLSearchParams(window.location.search);
+      for (const [k, v] of incoming.entries()) {
+        defaults.set(k, v);
+      }
+      const target = new URL("./modular_assemblies.html", window.location.href);
+      target.search = defaults.toString();
+      window.location.replace(target.toString());
+    </script>
+    <p>
+      If redirect does not start, open
+      <a id="fallback" href="./modular_assemblies.html">modular_assemblies.html</a>.
+    </p>
+    <script>
+      document.getElementById("fallback").href =
+        "./modular_assemblies.html?" + defaults.toString();
+    </script>
+  </body>
+</html>
