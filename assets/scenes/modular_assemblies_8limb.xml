@@ -1,0 +1,154 @@
+<mujoco model="modular_assemblies_8limb">
+  <compiler angle="degree"/>
+  <option timestep="0.005" gravity="0 0 -9.81" iterations="70" integrator="implicitfast"/>
+  <size njmax="900" nconmax="400"/>
+
+  <default>
+    <geom friction="1.0 0.08 0.02" solimp="0.95 0.99 0.001" solref="0.002 1"/>
+    <site size="0.012" rgba="0.55 0.86 0.95 1"/>
+    <equality active="false" solref="0.02 4" solimp="0.9 0.98 0.001"/>
+  </default>
+
+  <worldbody>
+    <light directional="true" diffuse="0.9 0.9 0.9" specular="0.2 0.2 0.2" pos="0 2.0 1.2" dir="0 -1 -0.2"/>
+    <geom name="ground" type="plane" size="5 5 0.1" rgba="0.22 0.24 0.26 1"/>
+
+    <body name="limb0" pos="-0.70 -0.22 0.11">
+      <joint type="free" damping="0.8"/>
+      <geom type="cylinder" fromto="0 0 0 0 0.34 0" size="0.03" density="750" rgba="0.56 0.80 0.20 1"/>
+      <geom type="sphere" pos="0 0 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <geom type="sphere" pos="0 0.34 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <site name="limb0_child" pos="0 0 0"/>
+      <site name="limb0_parent" pos="0 0.34 0"/>
+    </body>
+
+    <body name="limb1" pos="-0.45 -0.06 0.11">
+      <joint type="free" damping="0.8"/>
+      <geom type="cylinder" fromto="0 0 0 0 0.34 0" size="0.03" density="750" rgba="0.56 0.80 0.20 1"/>
+      <geom type="sphere" pos="0 0 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <geom type="sphere" pos="0 0.34 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <site name="limb1_child" pos="0 0 0"/>
+      <site name="limb1_parent" pos="0 0.34 0"/>
+    </body>
+
+    <body name="limb2" pos="-0.20 0.12 0.11">
+      <joint type="free" damping="0.8"/>
+      <geom type="cylinder" fromto="0 0 0 0 0.34 0" size="0.03" density="750" rgba="0.56 0.80 0.20 1"/>
+      <geom type="sphere" pos="0 0 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <geom type="sphere" pos="0 0.34 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <site name="limb2_child" pos="0 0 0"/>
+      <site name="limb2_parent" pos="0 0.34 0"/>
+    </body>
+
+    <body name="limb3" pos="0.08 0.22 0.11">
+      <joint type="free" damping="0.8"/>
+      <geom type="cylinder" fromto="0 0 0 0 0.34 0" size="0.03" density="750" rgba="0.56 0.80 0.20 1"/>
+      <geom type="sphere" pos="0 0 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <geom type="sphere" pos="0 0.34 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <site name="limb3_child" pos="0 0 0"/>
+      <site name="limb3_parent" pos="0 0.34 0"/>
+    </body>
+
+    <body name="limb4" pos="0.34 0.12 0.11">
+      <joint type="free" damping="0.8"/>
+      <geom type="cylinder" fromto="0 0 0 0 0.34 0" size="0.03" density="750" rgba="0.56 0.80 0.20 1"/>
+      <geom type="sphere" pos="0 0 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <geom type="sphere" pos="0 0.34 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <site name="limb4_child" pos="0 0 0"/>
+      <site name="limb4_parent" pos="0 0.34 0"/>
+    </body>
+
+    <body name="limb5" pos="0.57 -0.03 0.11">
+      <joint type="free" damping="0.8"/>
+      <geom type="cylinder" fromto="0 0 0 0 0.34 0" size="0.03" density="750" rgba="0.56 0.80 0.20 1"/>
+      <geom type="sphere" pos="0 0 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <geom type="sphere" pos="0 0.34 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <site name="limb5_child" pos="0 0 0"/>
+      <site name="limb5_parent" pos="0 0.34 0"/>
+    </body>
+
+    <body name="limb6" pos="0.28 -0.30 0.11">
+      <joint type="free" damping="0.8"/>
+      <geom type="cylinder" fromto="0 0 0 0 0.34 0" size="0.03" density="750" rgba="0.56 0.80 0.20 1"/>
+      <geom type="sphere" pos="0 0 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <geom type="sphere" pos="0 0.34 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <site name="limb6_child" pos="0 0 0"/>
+      <site name="limb6_parent" pos="0 0.34 0"/>
+    </body>
+
+    <body name="limb7" pos="-0.12 -0.33 0.11">
+      <joint type="free" damping="0.8"/>
+      <geom type="cylinder" fromto="0 0 0 0 0.34 0" size="0.03" density="750" rgba="0.56 0.80 0.20 1"/>
+      <geom type="sphere" pos="0 0 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <geom type="sphere" pos="0 0.34 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <site name="limb7_child" pos="0 0 0"/>
+      <site name="limb7_parent" pos="0 0.34 0"/>
+    </body>
+  </worldbody>
+
+  <equality>
+    <connect name="conn_0_1" site1="limb0_parent" site2="limb1_child"/>
+    <connect name="conn_0_2" site1="limb0_parent" site2="limb2_child"/>
+    <connect name="conn_0_3" site1="limb0_parent" site2="limb3_child"/>
+    <connect name="conn_0_4" site1="limb0_parent" site2="limb4_child"/>
+    <connect name="conn_0_5" site1="limb0_parent" site2="limb5_child"/>
+    <connect name="conn_0_6" site1="limb0_parent" site2="limb6_child"/>
+    <connect name="conn_0_7" site1="limb0_parent" site2="limb7_child"/>
+
+    <connect name="conn_1_0" site1="limb1_parent" site2="limb0_child"/>
+    <connect name="conn_1_2" site1="limb1_parent" site2="limb2_child"/>
+    <connect name="conn_1_3" site1="limb1_parent" site2="limb3_child"/>
+    <connect name="conn_1_4" site1="limb1_parent" site2="limb4_child"/>
+    <connect name="conn_1_5" site1="limb1_parent" site2="limb5_child"/>
+    <connect name="conn_1_6" site1="limb1_parent" site2="limb6_child"/>
+    <connect name="conn_1_7" site1="limb1_parent" site2="limb7_child"/>
+
+    <connect name="conn_2_0" site1="limb2_parent" site2="limb0_child"/>
+    <connect name="conn_2_1" site1="limb2_parent" site2="limb1_child"/>
+    <connect name="conn_2_3" site1="limb2_parent" site2="limb3_child"/>
+    <connect name="conn_2_4" site1="limb2_parent" site2="limb4_child"/>
+    <connect name="conn_2_5" site1="limb2_parent" site2="limb5_child"/>
+    <connect name="conn_2_6" site1="limb2_parent" site2="limb6_child"/>
+    <connect name="conn_2_7" site1="limb2_parent" site2="limb7_child"/>
+
+    <connect name="conn_3_0" site1="limb3_parent" site2="limb0_child"/>
+    <connect name="conn_3_1" site1="limb3_parent" site2="limb1_child"/>
+    <connect name="conn_3_2" site1="limb3_parent" site2="limb2_child"/>
+    <connect name="conn_3_4" site1="limb3_parent" site2="limb4_child"/>
+    <connect name="conn_3_5" site1="limb3_parent" site2="limb5_child"/>
+    <connect name="conn_3_6" site1="limb3_parent" site2="limb6_child"/>
+    <connect name="conn_3_7" site1="limb3_parent" site2="limb7_child"/>
+
+    <connect name="conn_4_0" site1="limb4_parent" site2="limb0_child"/>
+    <connect name="conn_4_1" site1="limb4_parent" site2="limb1_child"/>
+    <connect name="conn_4_2" site1="limb4_parent" site2="limb2_child"/>
+    <connect name="conn_4_3" site1="limb4_parent" site2="limb3_child"/>
+    <connect name="conn_4_5" site1="limb4_parent" site2="limb5_child"/>
+    <connect name="conn_4_6" site1="limb4_parent" site2="limb6_child"/>
+    <connect name="conn_4_7" site1="limb4_parent" site2="limb7_child"/>
+
+    <connect name="conn_5_0" site1="limb5_parent" site2="limb0_child"/>
+    <connect name="conn_5_1" site1="limb5_parent" site2="limb1_child"/>
+    <connect name="conn_5_2" site1="limb5_parent" site2="limb2_child"/>
+    <connect name="conn_5_3" site1="limb5_parent" site2="limb3_child"/>
+    <connect name="conn_5_4" site1="limb5_parent" site2="limb4_child"/>
+    <connect name="conn_5_6" site1="limb5_parent" site2="limb6_child"/>
+    <connect name="conn_5_7" site1="limb5_parent" site2="limb7_child"/>
+
+    <connect name="conn_6_0" site1="limb6_parent" site2="limb0_child"/>
+    <connect name="conn_6_1" site1="limb6_parent" site2="limb1_child"/>
+    <connect name="conn_6_2" site1="limb6_parent" site2="limb2_child"/>
+    <connect name="conn_6_3" site1="limb6_parent" site2="limb3_child"/>
+    <connect name="conn_6_4" site1="limb6_parent" site2="limb4_child"/>
+    <connect name="conn_6_5" site1="limb6_parent" site2="limb5_child"/>
+    <connect name="conn_6_7" site1="limb6_parent" site2="limb7_child"/>
+
+    <connect name="conn_7_0" site1="limb7_parent" site2="limb0_child"/>
+    <connect name="conn_7_1" site1="limb7_parent" site2="limb1_child"/>
+    <connect name="conn_7_2" site1="limb7_parent" site2="limb2_child"/>
+    <connect name="conn_7_3" site1="limb7_parent" site2="limb3_child"/>
+    <connect name="conn_7_4" site1="limb7_parent" site2="limb4_child"/>
+    <connect name="conn_7_5" site1="limb7_parent" site2="limb5_child"/>
+    <connect name="conn_7_6" site1="limb7_parent" site2="limb6_child"/>
+  </equality>
+</mujoco>

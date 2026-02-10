@@ -1,0 +1,68 @@
+<mujoco model="modular_assemblies_4limb">
+  <compiler angle="degree"/>
+  <option timestep="0.005" gravity="0 0 -9.81" iterations="60" integrator="implicitfast"/>
+  <size njmax="400" nconmax="200"/>
+
+  <default>
+    <geom friction="1.0 0.08 0.02" solimp="0.95 0.99 0.001" solref="0.002 1"/>
+    <site size="0.012" rgba="1 0.8 0.1 1"/>
+    <equality active="false" solref="0.02 4" solimp="0.9 0.98 0.001"/>
+  </default>
+
+  <worldbody>
+    <light directional="true" diffuse="0.9 0.9 0.9" specular="0.2 0.2 0.2" pos="0 2.0 1.2" dir="0 -1 -0.2"/>
+    <geom name="ground" type="plane" size="4 4 0.1" rgba="0.22 0.24 0.26 1"/>
+
+    <body name="limb0" pos="-0.55 -0.16 0.10">
+      <joint type="free" damping="0.8"/>
+      <geom type="cylinder" fromto="0 0 0 0 0.34 0" size="0.03" density="750" rgba="0.56 0.80 0.20 1"/>
+      <geom type="sphere" pos="0 0 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <geom type="sphere" pos="0 0.34 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <site name="limb0_child" pos="0 0 0"/>
+      <site name="limb0_parent" pos="0 0.34 0"/>
+    </body>
+
+    <body name="limb1" pos="-0.20 -0.05 0.10">
+      <joint type="free" damping="0.8"/>
+      <geom type="cylinder" fromto="0 0 0 0 0.34 0" size="0.03" density="750" rgba="0.56 0.80 0.20 1"/>
+      <geom type="sphere" pos="0 0 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <geom type="sphere" pos="0 0.34 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <site name="limb1_child" pos="0 0 0"/>
+      <site name="limb1_parent" pos="0 0.34 0"/>
+    </body>
+
+    <body name="limb2" pos="0.18 0.02 0.10">
+      <joint type="free" damping="0.8"/>
+      <geom type="cylinder" fromto="0 0 0 0 0.34 0" size="0.03" density="750" rgba="0.56 0.80 0.20 1"/>
+      <geom type="sphere" pos="0 0 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <geom type="sphere" pos="0 0.34 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <site name="limb2_child" pos="0 0 0"/>
+      <site name="limb2_parent" pos="0 0.34 0"/>
+    </body>
+
+    <body name="limb3" pos="0.54 0.12 0.10">
+      <joint type="free" damping="0.8"/>
+      <geom type="cylinder" fromto="0 0 0 0 0.34 0" size="0.03" density="750" rgba="0.56 0.80 0.20 1"/>
+      <geom type="sphere" pos="0 0 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <geom type="sphere" pos="0 0.34 0" size="0.04" density="750" rgba="0.55 0.86 0.95 1"/>
+      <site name="limb3_child" pos="0 0 0"/>
+      <site name="limb3_parent" pos="0 0.34 0"/>
+    </body>
+  </worldbody>
+
+  <equality>
+    <!-- Directed parent->child attach channels -->
+    <connect name="conn_0_1" site1="limb0_parent" site2="limb1_child"/>
+    <connect name="conn_0_2" site1="limb0_parent" site2="limb2_child"/>
+    <connect name="conn_0_3" site1="limb0_parent" site2="limb3_child"/>
+    <connect name="conn_1_0" site1="limb1_parent" site2="limb0_child"/>
+    <connect name="conn_1_2" site1="limb1_parent" site2="limb2_child"/>
+    <connect name="conn_1_3" site1="limb1_parent" site2="limb3_child"/>
+    <connect name="conn_2_0" site1="limb2_parent" site2="limb0_child"/>
+    <connect name="conn_2_1" site1="limb2_parent" site2="limb1_child"/>
+    <connect name="conn_2_3" site1="limb2_parent" site2="limb3_child"/>
+    <connect name="conn_3_0" site1="limb3_parent" site2="limb0_child"/>
+    <connect name="conn_3_1" site1="limb3_parent" site2="limb1_child"/>
+    <connect name="conn_3_2" site1="limb3_parent" site2="limb2_child"/>
+  </equality>
+</mujoco>

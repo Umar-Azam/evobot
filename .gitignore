@@ -1,0 +1,15 @@
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+
+# Runtime artifacts
+artifacts/*
+!artifacts/.gitkeep
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/

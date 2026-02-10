@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MuJoCo Modular Assemblies Prototype</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="description" content="Modular self-assembly prototype in MuJoCo WASM"/>
+    <link rel="icon" type="image/png" href="./assets/favicon.png"/>
+  </head>
+  <body style="margin:0; overflow:hidden; background:#141b22;">
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./node_modules/three/build/three.module.js",
+          "three/addons/": "./node_modules/three/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="./src/modularAssembliesMain.js"></script>
+  </body>
+</html>
+
