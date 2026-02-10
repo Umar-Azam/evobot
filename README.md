@@ -1,6 +1,6 @@
 # evobot
 
-A self-contained browser simulation workspace for modular robotic subassemblies in MuJoCo-WASM.
+A self-contained browser simulation workspace for modular robotic subassemblies in MuJoCo-WASM. [Online Demo Here](https://umar-azam.github.io/evobot/modular_assemblies.html?scene=modular_assemblies_8limb.xml&reward=standing&policy=assets%2Fpolicies%2Fstanding_8limb_geomv2_best.json&noise=0.02&torque_scale=6.5)
 
 This repository packages the exact simulation stack developed in the parent project into a minimal, runnable structure:
 - browser simulator with 1-, 4-, and 8-limb scenes,
